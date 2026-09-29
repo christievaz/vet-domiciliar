@@ -9,6 +9,8 @@ from atendimentos.models import Atendimento
 
 def dashboard(request):
 
+proximos = Agendamento.objects.all().order_by('data')[:5]
+
     html = f"""
 <html>
 
