@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "atendimentos",
     'vacinas',
     'agenda',
+    'dashboard',
 ]
 
 MIDDLEWARE = [

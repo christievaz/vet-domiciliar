@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from dashboard.views import dashboard
 
 admin.site.site_header = "Vet Domiciliar"
 admin.site.site_title = "Vet Domiciliar"
 admin.site.index_title = "Painel Administrativo"
 
 urlpatterns = [
+    path('', dashboard),
     path('admin/', admin.site.urls),
 ]
