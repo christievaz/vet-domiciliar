@@ -47,6 +47,86 @@ box-shadow:0 4px 12px rgba(0,0,0,0.15);
 
 </div>
 
+<div style="margin-top:40px;">
+
+    <h2>📅 Próximos Agendamentos</h2>
+
+    {% for agendamento in proximos %}
+
+    <div style="
+    background:white;
+    padding:20px;
+    margin-bottom:12px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.10);
+    ">
+
+        <strong>{{ agendamento.pet.nome }}</strong>
+
+        <br>
+
+        📅 {{ agendamento.data }}
+
+        <br>
+
+        🩺 {{ agendamento.servico }}
+
+    </div>
+
+    {% empty %}
+
+    <div style="
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    ">
+        Nenhum agendamento encontrado.
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div style="margin-top:40px;">
+
+    <h2>🩺 Últimos Atendimentos</h2>
+
+    {% for atendimento in ultimos_atendimentos %}
+
+    <div style="
+    background:white;
+    padding:20px;
+    margin-bottom:12px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.10);
+    ">
+
+        <strong>{{ atendimento.pet.nome }}</strong>
+
+        <br>
+
+        {{ atendimento.data }}
+
+        <br>
+
+        {{ atendimento.tipo_atendimento }}
+
+    </div>
+
+    {% empty %}
+
+    <div style="
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    ">
+        Nenhum atendimento encontrado.
+    </div>
+
+    {% endfor %}
+
+</div>
+
 </body>
 </html>
 ``

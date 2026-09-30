@@ -15,6 +15,9 @@ def dashboard(request):
         "vacinas": Vacina.objects.count(),
         "agenda": Agendamento.objects.count(),
         "atendimentos": Atendimento.objects.count(),
+        "proximos": Agendamento.objects.order_by("data")[:5],
+
+        "ultimos_atendimentos": Atendimento.objects.order_by("-id")[:5],
     }
 
     return render(
